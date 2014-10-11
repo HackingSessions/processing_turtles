@@ -19,7 +19,7 @@ class Turtle {
     this.x = x; this.y = y; this.c = c;
   }
 
-  void seColor(color c){
+  void setColor(color c){
     this.c =c ;
   }
   
