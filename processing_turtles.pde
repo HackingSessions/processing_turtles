@@ -102,12 +102,32 @@ void spiral(Turtle t, float llen){
     spiral(t,llen-5);
   }
 }
+
+void flake(Turtle t, float llen, int depth){
+  if (depth==0) {
+    t.pd();
+      t.fd(llen);
+      t.pu();
+    }
+    else{
+      flake(t,llen/3,depth-1);
+      t.right(60);
+      flake(t,llen/3,depth-1);
+      t.left(120);
+      flake(t,llen/3,depth-1);
+      t.right(60);
+      flake(t,llen/3,depth-1);
+      
+    }
+}
+
 Turtle t;
 void setup() {
-  size(300, 300);
+  size(800, 800);
   t = new Turtle();
   //spiral(t,100);
-  tree(t,50);
+  //tree(t,50);
+  flake(t,500,4);
 }
 
 
