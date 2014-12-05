@@ -19,6 +19,17 @@ class Turtle {
     this.x = x; this.y = y; this.c = c;
   }
 
+  void setX(float x) {
+    this.x = x;
+  }
+  void setY(float y) {
+    this.y = y;
+  }
+  void setXY(float x, float y) {
+    this.x = x;
+    this.y = y;
+  }
+  
   void setColor(color c){
     this.c =c ;
   }
@@ -121,13 +132,25 @@ void flake(Turtle t, float llen, int depth){
     }
 }
 
+
+void box(Turtle t, float x, float y, float len){
+  t.setXY(x,y);
+    t.pd();
+  for (int i=0;i<4;i++){
+    t.fd(len);
+    t.right(90);
+  }
+  t.pu();
+}
+
 Turtle t;
 void setup() {
   size(800, 800);
   t = new Turtle();
+  box(t,100,100,30);
   //spiral(t,100);
   //tree(t,50);
-  flake(t,500,4);
+  //flake(t,500,4);
 }
 
 
