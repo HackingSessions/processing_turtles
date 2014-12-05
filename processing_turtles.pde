@@ -94,6 +94,21 @@ void tree(Turtle t, float llen) {
   }
   t.pu();
 }
+
+void t2(Turtle t, float llen, float deg, int depth){
+  if (depth > 0) {
+    t.fd(llen);
+    t.right(deg);
+    t2(t,llen/2,deg,depth-1);
+    t.left(deg*2);
+    t2(t,llen/2,deg,depth-1);
+    t.right(deg);
+  t.pd();
+    t.bk(llen);
+  t.pu();
+  }
+
+}
 void spiral(Turtle t, float llen){
   if (llen>0) {
     t.pd();
@@ -126,8 +141,9 @@ void setup() {
   size(800, 800);
   t = new Turtle();
   //spiral(t,100);
-  //tree(t,50);
-  flake(t,500,4);
+  //tree(t,100);
+  //flake(t,500,4);
+  t2(t,100,40,8);
 }
 
 
