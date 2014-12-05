@@ -162,16 +162,11 @@ Turtle t;
 void setup() {
   size(800, 800);
   t = new Turtle();
-  box(t,100,100,30);
+  //box(t,100,100,30);
   //spiral(t,100);
-<<<<<<< HEAD
   //tree(t,100);
   //flake(t,500,4);
-  (t,100,40,8);
-=======
-  //tree(t,50);
-  //flake(t,500,4);
->>>>>>> 5e4010f8b29cc23c9fe1bd6e9aa121d0f2d41c78
+  t2(t,100,40,8);
 }
 
 
