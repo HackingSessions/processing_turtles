@@ -1,8 +1,16 @@
-
+/**
+ * Turtle class
+ *
+ */
 class Turtle {
   float x,y,h;
   color c;
   boolean pendown;
+
+  /**
+   * constructor
+   *
+   */
   public Turtle() {
     x = 150;
     y= 150;
@@ -11,17 +19,32 @@ class Turtle {
     c = color(255,0,0);
   }
 
+  /**
+   * Constructor
+   * @param x, y -- starting location for the turtle
+   *
+   */
   public Turtle(float x, float y){
     this.x = x; this.y=y;
   }
 
+  
+  /**
+   * constructor
+   * @param x,y and color
+   */
   public Turtle(float x, float y, color c){
     this.x = x; this.y = y; this.c = c;
   }
 
+
+  /*----------------- set location --------------------*/
+
   void setX(float x) {
     this.x = x;
   }
+
+
   void setY(float y) {
     this.y = y;
   }
@@ -30,10 +53,12 @@ class Turtle {
     this.y = y;
   }
   
+  /*----------------- set color --------------------*/
   void setColor(color c){
     this.c =c ;
   }
   
+  /*----------------- set heading --------------------*/
   void setHeading(float d) {
     h = d;
   }
@@ -45,6 +70,10 @@ class Turtle {
     h=h+d;
   }
 
+  
+  /*----------------- movement --------------------*/
+
+  
   void fd(float d) {
     float ox=x;
     float oy=y;
@@ -77,6 +106,8 @@ class Turtle {
   }
 
 
+  /*----------------- drawing --------------------*/
+
   
   void pd() {
     pendown = true;
@@ -91,6 +122,8 @@ class Turtle {
   }
   
 }
+
+/*----------------- free routines--------------------*/
 
 void tree(Turtle t, float llen) {
   t.pd();
@@ -158,7 +191,12 @@ void box(Turtle t, float x, float y, float len){
   t.pu();
 }
 
+
+/*----------------- setup and draw and globals --------------------*/
+
 Turtle t;
+
+
 void setup() {
   size(800, 800);
   t = new Turtle();
